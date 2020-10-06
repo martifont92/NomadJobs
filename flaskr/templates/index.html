@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Nomad Jobs
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<h1 class="display-4">NOMAD JOBS</h1>
+    		<p class="lead">Encuentra y publica los mejores trabajos a distancia!</p>
+    		<a href="{{ '/jobpost'}}" class="btn btn-dark btn-md">Publicar Oferta</a>
+  		</div>
+  	</div>
+
+  	<div>
+  		<h5 class="text-center">OFERTAS RECIENTES</h5>
+		<div class="card card-job shadow-sm" style="width: 18rem;">
+			<div class="card-body text-center">
+				<img src="static/img/logo.jpg" class="card-img-top" alt="Logo">
+				<p>Nomad Jobs</p>
+				<h6 class="card-title">Director/a de Marketing</h6>
+				<p>Media Jornada &#8226; (100% Remoto)</p>
+				<p>850-1100€</p>
+				<a href="#" class="btn btn-sm btn-dark">Ver oferta</a>
+			</div>
+			<div class="card-footer text-center">
+      			<small class="text-muted">01/10/2020</small>
+   			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

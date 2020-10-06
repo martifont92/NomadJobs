@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Publica un empleo
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h2>Los mejores trabajadores remotos a tu alcance!</h2>
+		</div>
+	</div>	
+</div>
+<div class="jobpost-form">
+	<form action="/jobpost" method="POST">
+
+		<div class="row">
+	    	<div class="col-8 offset-4">
+				<h2>Sobre el puesto</h2>
+			</div>	
+  		</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Posición</label>
+			<div class="col-8">
+            	<input type="text" class="form-control" name="position" required="required" placeholder="e.g: Project Manager">
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+    		<label class="col-form-label col-4" for="exampleFormControlSelect1">Categoría</label>
+    		<div class="col-8">
+	    		<select class="form-control" id="exampleFormControlSelect1">
+			    	<option>🧑‍💻	Software</option>
+			      	<option>📞	Atención al Cliente</option>
+			      	<option>🎨	Diseño</option>
+			      	<option>📷	Fotografía</option>
+			     	<option>🤝	Ventas</option>
+			     	<option>📊	Marketing</option>
+			      	<option>📁	Administrativo</option>
+			      	<option>🏦	Finanzas</option>
+			      	<option>🧑‍🤝‍🧑	Recursos Humanos</option>
+			     	<option>🧮	Educación</option>
+			     	<option>Otros</option>
+			    </select>
+    		</div>
+		</div>
+
+    	<div class="form-group row">
+    		<label class="col-form-label col-4" for="exampleFormControlSelect1">Jornada</label>
+    		<div class="col-8">
+	    		<select class="form-control" id="exampleFormControlSelect1">
+			    	<option>Jornada Completa</option>
+			      	<option>Media Jornada</option>
+			    </select>
+    		</div>
+		</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Región del Candidato</label>
+			<div class="col-8">
+            	<input type="text" class="form-control" name="region" required="required" placeholder="e.g: Europa">
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Salario</label>
+			<div class="col-8">
+            	<input type="text" class="form-control" name="salary" required="required" placeholder="e.g: 35.000-40.000€/año">
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Como aplicar</label>
+			<div class="col-8">
+            	<input type="text" class="form-control" name="apply" required="required">
+            	<p>URL (http://) or email (@) donde los candidatos pueden solicitar este puesto.</p>
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Descripción del puesto</label>
+			<div class="col-8">
+				<textarea type="text" class="form-control" rows="8" name="jobDescription" required="required"></textarea>
+        	</div>        	
+    	</div>
+
+    	<div class="row">
+	    	<div class="col-8 offset-4">
+				<h2>Sobre la empresa</h2>
+			</div>	
+  		</div>
+
+  		<div class="form-group row">
+			<label class="col-form-label col-4">Nombre</label>
+			<div class="col-8">
+            	<input type="text" class="form-control" name="companyName" required="required">
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Sede Social</label>
+			<div class="col-8">
+            	<input type="text" class="form-control" name="companyCountry" required="required">
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Email</label>
+			<div class="col-8">
+            	<input type="email" class="form-control" name="companyEmain" required="required">
+            	<p>Este correo no se mostrará públicamente. Lo utilizaremos para enviar factura y confirmación.</p>
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+    		<label class="col-form-label col-4">Logo</label>
+    		<div class="col-8">
+    			<input type="file" class="form-control-file">
+    		</div>
+  		</div>
+
+    	<div class="form-group row">
+			<label class="col-form-label col-4">Descripción</label>
+			<div class="col-8">
+				<textarea type="text" class="form-control" rows="8" name="companyDescription" required="required"></textarea>
+        	</div>        	
+    	</div>
+
+    	<div class="form-group row">
+			<div class="col-8 offset-4">
+				<h5>TOTAL 199€</h5>
+				<button id='buy_now_btn' class="btn btn-dark btn-lg">Publicar</button>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

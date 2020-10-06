@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='custom.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename ='favicon/favicon.ico') }}">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-white">
+		<a class="navbar-brand" href="{{ '/' }}">
+			<img src="static/img/logo.jpg" width="73" height="35" class="align-middle">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+	        		<a class="nav-link" href="{{ '/' }}">Buscar empleo</a>
+	      		</li>
+	      		<li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        	Categorias
+			        </a>
+		        	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			          <a href="/domains" class="dropdown-item">🧑‍💻	Software</a>
+			          <a href="#" class="dropdown-item">📞	Atención al Cliente</a>
+			          <a href="#" class="dropdown-item">🎨	Diseño</a>
+			          <a href="#" class="dropdown-item">📷	Fotografía</a>
+			          <a href="#" class="dropdown-item">🤝	Ventas</a>
+			          <a href="#" class="dropdown-item">📊	Marketing</a>
+			          <a href="#" class="dropdown-item">📁	Administrativo</a>
+			          <a href="#" class="dropdown-item">🏦	Finanzas</a>
+			          <a href="#" class="dropdown-item">🧑‍🤝‍🧑	Recursos Humanos</a>
+			          <a href="#" class="dropdown-item">🧮	Educación</a>
+			          <a href="#" class="dropdown-item">Otros</a>
+		        	</div>
+		      	</li>
+		      	<!--
+				{% if not current_user.is_authenticated %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ '/login' }}">Log In</a>
+	      		</li>
+	      		{% endif %}
+	      		{% if not current_user.is_authenticated %}
+	      		<li class="nav-item">
+	        		<a class="nav-link" href="{{ '/signup'}}">Register</a>
+	      		</li>
+	      		{% endif %}
+	      		{% if current_user.is_authenticated %}
+	      		<a class="nav-link" href="{{ '/profile'}}">Perfil</a>
+	      		{% endif %}
+	      		{% if current_user.is_authenticated %}
+	      		<li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="{{ '/profile'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        	⚙️
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			        	<a class="nav-link" href="{{ '/logout'}}">Log Out</a>
+			        </div>
+			    </li>
+	      		{% endif %}
+	      		-->
+	      		<a href="{{ '/jobpost'}}" class="btn btn-dark btn-md">Publicar empleo</a>
+	    	</ul>
+	  	</div>
+	</nav>
+
+	{% block content %}
+	
+	{% endblock %}
+
+	<footer class="footer">
+		<div class="container text-center">
+			<p class="copyright">© Copyright 2020 nomadjobs.io</a></p>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ url_for('static', filename='script-ajax.js') }}"></script>
+</body>
+</html>
