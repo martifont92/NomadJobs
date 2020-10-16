@@ -44,19 +44,6 @@ li{
 	font-weight: 900;
 }
 
-.card-job{
-	background-color: #fff;
-}
-
-.card-job a{
-	color: #fff;
-	margin-bottom: 25px;
-}
-
-.featured {
-	border-color: #5cd3b4;
-}
-
 .footer{
 	margin-top: 25px;
 }
@@ -84,10 +71,11 @@ li{
 	border-color: #5cd3b4;
 }
 .form-control, .btn {        
-	border-radius: 3px;
+	border-radius: 5px;
 }
+
 .jobpost-form {
-	width: 1105px;
+	width: 800px;
 	margin: 0 auto;
 	padding: 10px 0;
 }
@@ -127,6 +115,7 @@ li{
 	border: none;
 	margin-top: 20px;
 	min-width: 140px;
+	border-radius: 25px;
 }
 .jobpost-form .btn:hover, .jobpost-form .btn:focus {
 	background: #41cba9;
@@ -153,3 +142,98 @@ li{
 	text-decoration: underline;
 }
 /* end jobpost form */
+
+.card {
+    height: 100%;
+	display: flex;
+}
+
+.card-block {
+	margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.card.card-footer {
+    align-self: flex-end;
+    flex: 1 1 auto;
+}
+
+.card-job{
+	background-color: #fff;
+}
+
+.card-job a{
+	color: #fff;
+	margin-bottom: 25px;
+}
+
+.featured{
+	border-color: #5cd3b4;
+}
+
+.row{
+	margin-top: 25px;
+}
+
+/* details */
+.details{
+	margin-top: 30px;
+	width: 800px;
+	margin: 0 auto;
+	padding: 10px 0;
+
+	color: #545454;
+	border-radius: 3px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+
+.details .btn {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background: #5cd3b4;
+	border: none;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	min-width: 140px;
+	border-radius: 25px;
+}
+
+.details a {
+	color: #5cd3b4;
+	text-decoration: underline;
+}
+
+.details p{
+	font-size: 14pt;
+}
+
+.details a:hover {
+	text-decoration: none;
+}
+.details form a {
+	color: #5cd3b4;
+	text-decoration: none;
+}	
+.details form a:hover {
+	text-decoration: underline;
+}
+
+.divider p {
+	text-align: center;
+	color: #5cd3b4;
+	font-size: 35pt;
+	font-weight: 900;
+}
+
+.claim p {
+	font-size: 12pt;
+	margin-bottom: 0px;
+}
+/* end details form */

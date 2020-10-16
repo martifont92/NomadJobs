@@ -1,22 +1,63 @@
-from flask import Flask, render_template, url_for, request, abort
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask import Flask, render_template, url_for, request, abort, redirect
 import stripe
-
-db = SQLAlchemy()
+from .models import db, Job
 
 def create_app():
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = 'secretkey1234'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jobs.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db.init_app(app)
 
     # STRIPE
     app.config['STRIPE_PUBLIC_KEY'] = 'pk_test_T7FKDbqcVOQByT6Cl6YBgPFj00y52ZO2hb'
     app.config['STRIPE_SECRET_KEY'] = 'sk_test_uLduAGXEEL228gykOuUPktgu00sQrbP8KM'
     stripe.api_key = app.config['STRIPE_SECRET_KEY']
 
+    # Job
+    @app.route('/jobpost')
+    def jobpost():
+        return render_template('jobpost.html')
+
+    @app.route('/jobpost', methods=['POST'])
+    def jobpost_post():
+        with app.app_context():
+            #About the job
+            position = request.form.get('position')
+            category = request.form.get('category')
+            jobType = request.form.get('jobType')
+            region = request.form.get('region')
+            salary = request.form.get('salary')
+            howApply = request.form.get('howApply')
+            jobDescription = request.form.get('jobDescription')
+            #About the company
+            companyName = request.form.get('companyName')
+            hq = request.form.get('hq')
+            email = request.form.get('email')
+            #logo = request.form.get('logo')
+            companyDescription = request.form.get('companyDescription')
+
+            new_job = Job(
+                position = position,
+                category = category,
+                jobType = jobType,
+                region  = region,
+                salary = salary,
+                howApply = howApply,
+                jobDescription = jobDescription,
+                companyName = companyName,
+                hq = hq,
+                email = email,
+                #logo = logo,
+                companyDescription = companyDescription
+                )
+            db.session.add(new_job)
+            db.session.commit()
+        return redirect(url_for('main.index'))
+    # end Job
+
+    # STRIPE
     @app.route('/stripe_pay')
     def stripe_pay():
         session = stripe.checkout.Session.create(
@@ -68,12 +109,8 @@ def create_app():
         return {}
     # end STRIPE
 
-    db.init_app(app)
-
+    # Blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-
-    from .newjob import newjob as newjob_blueprint
-    app.register_blueprint(newjob_blueprint)
 
     return app

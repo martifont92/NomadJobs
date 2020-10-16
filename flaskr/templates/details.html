@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Nomad Jobs
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="details">
+		<div class="text-center">
+			<button id='apply' type="submit" class="btn btn-lg">SOLICITAR EMPLEO</button>
+		</div>
+		<h1>{{ details.position }}</h1>
+		<h5>{{ details.companyName }}</h5>
+		<div class="divider">
+			<p>/</p>
+		</div>
+		<p>Jornada: {{ details.jobType }}</p>
+		<p>Región: {{ details.region }}</p>
+		<p>Categoría: {{ details.category }}</p>
+		<div class="divider">
+			<p>/</p>
+		</div>
+		<h5>Descripción del puesto</h5>
+		<p>{{ details.jobDescription }}</p>
+		<div class="divider">
+			<p>/</p>
+		</div>
+		<h5>Descripción de la empresa</h5>
+		<p>{{ details.companyDescription }}</p>
+		<div class="text-center">
+			<button id='apply' type="submit" class="btn btn-lg">SOLICITAR EMPLEO</button>
+		</div>
+		<div class="text-center claim">
+			<p>Por favor, asegúrate de mencionar <strong>Nomad Jobs</strong> al solicitar el puesto 😉</p>
+			<p>¿Necesitas editar esta oferta? <a href="mailto:martifont92@gmail.com">¡Contacta con nosotros!</a> 📫</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

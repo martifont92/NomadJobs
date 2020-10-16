@@ -10,25 +10,32 @@ Nomad Jobs
   		<div class="container">
     		<h1 class="display-4">NOMAD JOBS</h1>
     		<p class="lead">Encuentra y publica los mejores trabajos a distancia!</p>
-    		<a href="{{ '/jobpost'}}" class="btn btn-dark btn-md">Publicar Oferta</a>
+    		<a href="{{ '/jobpost' }}" class="btn btn-dark btn-md">Publicar Oferta</a>
   		</div>
   	</div>
 
-  	<div>
-  		<h5 class="text-center">OFERTAS RECIENTES</h5>
-		<div class="card card-job shadow-sm" style="width: 18rem;">
-			<div class="card-body text-center">
-				<img src="static/img/logo.jpg" class="card-img-top" alt="Logo">
-				<p>Nomad Jobs</p>
-				<h6 class="card-title">Director/a de Marketing</h6>
-				<p>Media Jornada &#8226; (100% Remoto)</p>
-				<p>850-1100€</p>
-				<a href="#" class="btn btn-sm btn-dark">Ver oferta</a>
+  	<h5 class="text-center">OFERTAS RECIENTES</h5>
+
+  	<div class="row">
+  		{% for job in jobs %}
+  		<div class="col-sm-3 mb-4">
+			<div class="card card-job shadow-sm text-center">
+				<div class="card-block">
+					<div class="mb-1">
+						<img src="static/img/logo.jpg" class="img-fluid w-50 mb-2" alt="Logo">
+						<p>{{ job.companyName }}</p>
+						<h6 class="card-title">{{ job.position }}</h6>
+						<p>{{ job.jobType }} &#8226; ({{ job.region }})</p>
+						<p>{{ job.salary }}</p>
+						<a href="/details/{{ job.id }}" class="btn btn-sm btn-dark">Ver oferta</a>
+					</div>
+				</div>
+				<div class="card-footer text-center">
+		      		<small class="text-muted">{{ job.created.date() }}</small>
+		   		</div>
 			</div>
-			<div class="card-footer text-center">
-      			<small class="text-muted">01/10/2020</small>
-   			</div>
 		</div>
+		{% endfor %}
 	</div>
 </div>
 {% endblock %}
