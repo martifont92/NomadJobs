@@ -8,7 +8,9 @@ Nomad Jobs
 <div class="container">
 	<div class="details">
 		<div class="text-center">
-			<button id='apply' type="submit" class="btn btn-lg">SOLICITAR EMPLEO</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+	  			SOLICITAR EMPLEO
+			</button>
 		</div>
 		<h1>{{ details.position }}</h1>
 		<h5>{{ details.companyName }}</h5>
@@ -29,12 +31,29 @@ Nomad Jobs
 		<h5>Descripción de la empresa</h5>
 		<p>{{ details.companyDescription }}</p>
 		<div class="text-center">
-			<button id='apply' type="submit" class="btn btn-lg">SOLICITAR EMPLEO</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+	  			SOLICITAR EMPLEO
+			</button>
 		</div>
 		<div class="text-center claim">
 			<p>Por favor, asegúrate de mencionar <strong>Nomad Jobs</strong> al solicitar el puesto 😉</p>
 			<p>¿Necesitas editar esta oferta? <a href="mailto:martifont92@gmail.com">¡Contacta con nosotros!</a> 📫</p>
 		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body text-center">
+	      	<p>Para solicitar este empleo, dirigete a:</p>
+	      	<p><strong> {{ details.howApply }}</strong></p>
+	      	<p>Con el título [{{ details.position }} @ {{ details.companyName }}]</p>
+	      	<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">OK</span>
+	        </button>
+	      </div>
+	    </div>
 	</div>
 </div>
 {% endblock %}

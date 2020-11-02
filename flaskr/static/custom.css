@@ -75,7 +75,8 @@ li{
 }
 
 .jobpost-form {
-	width: 800px;
+	width: 65%;
+	min-width: 525px;
 	margin: 0 auto;
 	padding: 10px 0;
 }
@@ -128,6 +129,7 @@ li{
 
 .jobpost-form p{
 	font-size: 10pt;
+	margin-top: 3px;
 	margin-bottom: 0px;
 }
 
@@ -160,13 +162,26 @@ li{
     flex: 1 1 auto;
 }
 
+.card-footer {
+    margin-top: auto;
+}
+
 .card-job{
 	background-color: #fff;
 }
 
+.card-job p{
+	margin-bottom: 8px;
+}
+
+.card-job h6{
+	margin-bottom: 8px;
+}
+
 .card-job a{
 	color: #fff;
-	margin-bottom: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .featured{
@@ -174,7 +189,7 @@ li{
 }
 
 .row{
-	margin-top: 25px;
+	margin-top:15px;
 }
 
 /* details */
@@ -237,3 +252,17 @@ li{
 	margin-bottom: 0px;
 }
 /* end details form */
+
+.modal-body .btn {
+	font-size: 15px;
+	font-weight: bold;
+	color: #fff;
+	background: #5cd3b4;
+	border: none;
+	min-width: 200px;
+	border-radius: 25px;
+	margin-top: 10px;
+}
+.modal-body p {
+	margin-bottom: 8px;
+}

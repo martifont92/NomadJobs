@@ -13,7 +13,7 @@ Publica un empleo
 	</div>	
 </div>
 <div class="jobpost-form">
-	<form action="/jobpost" method="POST">
+	<form action="/jobpost" method="POST" action="/path" enctype="multipart/form-data">
 
 		<div class="row">
 	    	<div class="col-8 offset-4">
@@ -33,14 +33,14 @@ Publica un empleo
     		<div class="col-8">
 	    		<select class="form-control" name="category">
 			    	<option>Software</option>
-			      	<option>Atención al Cliente</option>
+			      	<option>Atención-al-Cliente</option>
 			      	<option>Diseño</option>
 			      	<option>Fotografía</option>
 			     	<option>Ventas</option>
 			     	<option>Marketing</option>
 			      	<option>Administrativo</option>
 			      	<option>Finanzas</option>
-			      	<option>Recursos Humanos</option>
+			      	<option>Recursos-Humanos</option>
 			     	<option>Educación</option>
 			     	<option>Otros</option>
 			    </select>
@@ -53,6 +53,7 @@ Publica un empleo
 	    		<select class="form-control" name="jobType">
 			    	<option>Jornada Completa</option>
 			      	<option>Media Jornada</option>
+			      	<option>Freelancer</option>
 			    </select>
     		</div>
 		</div>
@@ -110,14 +111,15 @@ Publica un empleo
 			<label class="col-form-label col-4">Email</label>
 			<div class="col-8">
             	<input type="email" class="form-control" name="email" required="required">
-            	<p>Este correo no se mostrará públicamente. Lo utilizaremos para enviar factura y confirmación.</p>
+            	<p>Este correo no se mostrará públicamente. Es nuestra forma de contacto.</p>
         	</div>        	
     	</div>
 
     	<div class="form-group row">
     		<label class="col-form-label col-4">Logo</label>
     		<div class="col-8">
-    			<input type="file" class="form-control-file" name="logo">
+    			<input type="file" class="form-control-file" name="file">
+    			<p>(pdf / png / jpg / jpeg / gif)</p>
     		</div>
   		</div>
 
@@ -130,8 +132,9 @@ Publica un empleo
 
     	<div class="form-group row">
 			<div class="col-8 offset-4">
-				<h5>TOTAL 199€</h5>
-				<button id='buy_now_btn' type="submit" class="btn btn-dark btn-lg">Publicar</button>
+				<h5>TOTAL 0€</h5>
+				<p>* La oferta se publicará durante un periodo de 30 días. Pasado este periodo el anuncio se eliminará automáticamente de nuestra base de datos junto con todos los datos relacionados.</p>
+				<button type="submit" class="btn btn-dark btn-lg">Publicar</button>
 			</div>
 		</div>
 	</form>

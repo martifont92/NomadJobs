@@ -1,6 +1,13 @@
+import os
 from flask import Flask, render_template, url_for, request, abort, redirect
+from datetime import datetime
 import stripe
 from .models import db, Job
+from werkzeug.utils import secure_filename
+import uuid
+
+ALLOWED_EXTENSIONS = ('pdf', 'png', 'jpg', 'jpeg', 'gif')
+UPLOAD_FOLDER = '/Users/martifont/dev/nomadjobs/flaskr/static/uploads'
 
 def create_app():
     app = Flask(__name__)
@@ -8,6 +15,8 @@ def create_app():
     app.config['SECRET_KEY'] = 'secretkey1234'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jobs.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+    app.config['ALLOWED_EXTENSIONS'] = ALLOWED_EXTENSIONS
     db.init_app(app)
 
     # STRIPE
@@ -19,6 +28,10 @@ def create_app():
     @app.route('/jobpost')
     def jobpost():
         return render_template('jobpost.html')
+
+    def allowed_file(filename):
+        return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
     @app.route('/jobpost', methods=['POST'])
     def jobpost_post():
@@ -35,8 +48,14 @@ def create_app():
             companyName = request.form.get('companyName')
             hq = request.form.get('hq')
             email = request.form.get('email')
-            #logo = request.form.get('logo')
             companyDescription = request.form.get('companyDescription')
+
+            file = request.files['file']
+            if file.filename == '':
+                filename = 'default.png'
+            if file and allowed_file(file.filename):
+                filename = secure_filename(str(uuid.uuid4()))
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             new_job = Job(
                 position = position,
@@ -49,7 +68,8 @@ def create_app():
                 companyName = companyName,
                 hq = hq,
                 email = email,
-                #logo = logo,
+                file = filename,
+                filePath = os.path.abspath('static/uploads/'),
                 companyDescription = companyDescription
                 )
             db.session.add(new_job)
@@ -74,11 +94,10 @@ def create_app():
             'checkout_session_id': session['id'], 
             'checkout_public_key': app.config['STRIPE_PUBLIC_KEY']
         }
-
+    
     @app.route('/stripe_webhook', methods=['POST'])
     def stripe_webhook():
         print('WEBHOOK CALLED')
-
         if request.content_length > 1024 * 1024:
             print('REQUEST TOO BIG')
             abort(400)
@@ -108,6 +127,7 @@ def create_app():
             print(line_items['data'][0]['description'])
         return {}
     # end STRIPE
+
 
     # Blueprint
     from .main import main as main_blueprint

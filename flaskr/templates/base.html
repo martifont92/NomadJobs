@@ -10,7 +10,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-white">
 		<a class="navbar-brand" href="{{ '/' }}">
-			<img src="static/img/logo.jpg" width="73" height="35" class="align-middle">
+			<img src="{{ url_for('static', filename = 'img/logo.jpg') }}" width="73" height="35" class="align-middle">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -26,17 +26,17 @@
 			        	Categorias
 			        </a>
 		        	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <a href="/domains" class="dropdown-item">🧑‍💻	Software</a>
-			          <a href="#" class="dropdown-item">📞	Atención al Cliente</a>
-			          <a href="#" class="dropdown-item">🎨	Diseño</a>
-			          <a href="#" class="dropdown-item">📷	Fotografía</a>
-			          <a href="#" class="dropdown-item">🤝	Ventas</a>
-			          <a href="#" class="dropdown-item">📊	Marketing</a>
-			          <a href="#" class="dropdown-item">📁	Administrativo</a>
-			          <a href="#" class="dropdown-item">🏦	Finanzas</a>
-			          <a href="#" class="dropdown-item">🧑‍🤝‍🧑	Recursos Humanos</a>
-			          <a href="#" class="dropdown-item">🧮	Educación</a>
-			          <a href="#" class="dropdown-item">Otros</a>
+			          <a href="{{ '/category/Software' }}" class="dropdown-item">🧑‍💻	Software</a>
+			          <a href="{{ '/category/Atención-al-Cliente' }}" class="dropdown-item">📞	Atención al Cliente</a>
+			          <a href="{{ '/category/Diseño' }}" class="dropdown-item">🎨	Diseño</a>
+			          <a href="{{ '/category/Fotografía' }}" class="dropdown-item">📷	Fotografía</a>
+			          <a href="{{ '/category/Ventas' }}" class="dropdown-item">🤝	Ventas</a>
+			          <a href="{{ '/category/Marketing' }}" class="dropdown-item">📊	Marketing</a>
+			          <a href="{{ '/category/Administrativo' }}" class="dropdown-item">📁	Administrativo</a>
+			          <a href="{{ '/category/Finanzas' }}" class="dropdown-item">🏦	Finanzas</a>
+			          <a href="{{ '/category/Recursos-Humanos' }}" class="dropdown-item">🧑‍🤝‍🧑	Recursos Humanos</a>
+			          <a href="{{ '/category/Educación' }}" class="dropdown-item">🧮	Educación</a>
+			          <a href="{{ '/category/Otros' }}" class="dropdown-item">Otros</a>
 		        	</div>
 		      	</li>
 	      		<a href="{{ '/jobpost'}}" class="btn btn-dark btn-md">Publicar empleo</a>
