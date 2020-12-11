@@ -74,13 +74,6 @@ li{
 	border-radius: 5px;
 }
 
-.jobpost-form {
-	width: 65%;
-	min-width: 525px;
-	margin: 0 auto;
-	padding: 10px 0;
-}
-
 .jobpost-form form {
 	color: #999;
 	border-radius: 3px;
@@ -148,6 +141,7 @@ li{
 .card {
     height: 100%;
 	display: flex;
+	min-width: 200px;
 }
 
 .card-block {
@@ -195,10 +189,7 @@ li{
 /* details */
 .details{
 	margin-top: 30px;
-	width: 800px;
-	margin: 0 auto;
 	padding: 10px 0;
-
 	color: #545454;
 	border-radius: 3px;
 	margin-top: 30px;
@@ -265,4 +256,20 @@ li{
 }
 .modal-body p {
 	margin-bottom: 8px;
+}
+
+.faqs{
+	margin-top: 30px;
+}
+
+.faqs h1{
+	margin-bottom: 25px;
+}
+
+.faqs h3{
+	color: #5cd3b4;
+}
+
+.faqs a{
+	color: #5cd3b4;
 }

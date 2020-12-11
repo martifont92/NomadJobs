@@ -7,136 +7,135 @@ Publica un empleo
 {% block content %}
 <div class="container">
 	<div class="jumbotron jumbotron-fluid">
-		<div class="container">
-			<h2>Los mejores trabajadores remotos a tu alcance!</h2>
-		</div>
-	</div>	
-</div>
-<div class="jobpost-form">
-	<form action="/jobpost" method="POST" action="/path" enctype="multipart/form-data">
+			<h2>🏆 Los mejores trabajadores remotos a tu alcance!</h2>
+	</div>
 
-		<div class="row">
-	    	<div class="col-8 offset-4">
-				<h2>Sobre el puesto</h2>
-			</div>	
-  		</div>
+	<div class="jobpost-form">
+		<form action="/jobpost" method="POST" action="/path" enctype="multipart/form-data">
 
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Posición</label>
-			<div class="col-8">
-            	<input type="text" class="form-control" name="position" required="required" placeholder="e.g: Project Manager">
-        	</div>        	
-    	</div>
+			<div class="row">
+		    	<div class="col-8 offset-4">
+					<h2>Sobre el puesto</h2>
+				</div>	
+	  		</div>
 
-    	<div class="form-group row">
-    		<label class="col-form-label col-4" for="exampleFormControlSelect1">Categoría</label>
-    		<div class="col-8">
-	    		<select class="form-control" name="category">
-			    	<option>Software</option>
-			      	<option>Atención-al-Cliente</option>
-			      	<option>Diseño</option>
-			      	<option>Fotografía</option>
-			     	<option>Ventas</option>
-			     	<option>Marketing</option>
-			      	<option>Administrativo</option>
-			      	<option>Finanzas</option>
-			      	<option>Recursos-Humanos</option>
-			     	<option>Educación</option>
-			     	<option>Otros</option>
-			    </select>
-    		</div>
-		</div>
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Posición</label>
+				<div class="col-8">
+	            	<input type="text" class="form-control" name="position" required="required" placeholder="e.g: Project Manager">
+	        	</div>        	
+	    	</div>
 
-    	<div class="form-group row">
-    		<label class="col-form-label col-4">Jornada</label>
-    		<div class="col-8">
-	    		<select class="form-control" name="jobType">
-			    	<option>Jornada Completa</option>
-			      	<option>Media Jornada</option>
-			      	<option>Freelancer</option>
-			    </select>
-    		</div>
-		</div>
-
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Región del Candidato</label>
-			<div class="col-8">
-            	<input type="text" class="form-control" name="region" required="required" placeholder="e.g: Europa / e.g 100% Remoto">
-        	</div>        	
-    	</div>
-
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Salario</label>
-			<div class="col-8">
-            	<input type="text" class="form-control" name="salary" required="required" placeholder="e.g: 35.000-40.000€/año">
-        	</div>        	
-    	</div>
-
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Como aplicar</label>
-			<div class="col-8">
-            	<input type="text" class="form-control" name="howApply" required="required">
-            	<p>URL (http://) or email (@) donde los candidatos pueden solicitar este puesto.</p>
-        	</div>        	
-    	</div>
-
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Descripción del puesto</label>
-			<div class="col-8">
-				<textarea type="text" class="form-control" rows="8" name="jobDescription" required="required"></textarea>
-        	</div>        	
-    	</div>
-
-    	<div class="row">
-	    	<div class="col-8 offset-4">
-				<h2>Sobre la empresa</h2>
-			</div>	
-  		</div>
-
-  		<div class="form-group row">
-			<label class="col-form-label col-4">Nombre</label>
-			<div class="col-8">
-            	<input type="text" class="form-control" name="companyName" required="required">
-        	</div>        	
-    	</div>
-
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Sede Social</label>
-			<div class="col-8">
-            	<input type="text" class="form-control" name="hq" required="required">
-        	</div>        	
-    	</div>
-
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Email</label>
-			<div class="col-8">
-            	<input type="email" class="form-control" name="email" required="required">
-            	<p>Este correo no se mostrará públicamente. Es nuestra forma de contacto.</p>
-        	</div>        	
-    	</div>
-
-    	<div class="form-group row">
-    		<label class="col-form-label col-4">Logo</label>
-    		<div class="col-8">
-    			<input type="file" class="form-control-file" name="file">
-    			<p>(pdf / png / jpg / jpeg / gif)</p>
-    		</div>
-  		</div>
-
-    	<div class="form-group row">
-			<label class="col-form-label col-4">Descripción</label>
-			<div class="col-8">
-				<textarea type="text" class="form-control" rows="8" name="companyDescription" required="required"></textarea>
-        	</div>        	
-    	</div>
-
-    	<div class="form-group row">
-			<div class="col-8 offset-4">
-				<h5>TOTAL 0€</h5>
-				<p>* La oferta se publicará durante un periodo de 30 días. Pasado este periodo el anuncio se eliminará automáticamente de nuestra base de datos junto con todos los datos relacionados.</p>
-				<button type="submit" class="btn btn-dark btn-lg">Publicar</button>
+	    	<div class="form-group row">
+	    		<label class="col-form-label col-4" for="exampleFormControlSelect1">Categoría</label>
+	    		<div class="col-8">
+		    		<select class="form-control" name="category">
+				    	<option>Software</option>
+				      	<option>Atención-al-Cliente</option>
+				      	<option>Diseño</option>
+				      	<option>Fotografía</option>
+				     	<option>Ventas</option>
+				     	<option>Marketing</option>
+				      	<option>Administrativo</option>
+				      	<option>Finanzas</option>
+				      	<option>Recursos-Humanos</option>
+				     	<option>Educación</option>
+				     	<option>Otros</option>
+				    </select>
+	    		</div>
 			</div>
-		</div>
-	</form>
+
+	    	<div class="form-group row">
+	    		<label class="col-form-label col-4">Jornada</label>
+	    		<div class="col-8">
+		    		<select class="form-control" name="jobType">
+				    	<option>Jornada Completa</option>
+				      	<option>Media Jornada</option>
+				      	<option>Freelancer</option>
+				    </select>
+	    		</div>
+			</div>
+
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Región del Candidato</label>
+				<div class="col-8">
+	            	<input type="text" class="form-control" name="region" required="required" placeholder="e.g: Europa / e.g 100% Remoto">
+	        	</div>        	
+	    	</div>
+
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Salario</label>
+				<div class="col-8">
+	            	<input type="text" class="form-control" name="salary" required="required" placeholder="e.g: 35.000-40.000€/año">
+	        	</div>        	
+	    	</div>
+
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Como aplicar</label>
+				<div class="col-8">
+	            	<input type="text" class="form-control" name="howApply" required="required">
+	            	<p>URL (http://) or email (@) donde los candidatos pueden solicitar este puesto.</p>
+	        	</div>        	
+	    	</div>
+
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Descripción del puesto</label>
+				<div class="col-8">
+					<textarea type="text" class="form-control" rows="8" name="jobDescription" required="required"></textarea>
+	        	</div>        	
+	    	</div>
+
+	    	<div class="row">
+		    	<div class="col-8 offset-4">
+					<h2>Sobre la empresa</h2>
+				</div>	
+	  		</div>
+
+	  		<div class="form-group row">
+				<label class="col-form-label col-4">Nombre</label>
+				<div class="col-8">
+	            	<input type="text" class="form-control" name="companyName" required="required">
+	        	</div>        	
+	    	</div>
+
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Sede Social</label>
+				<div class="col-8">
+	            	<input type="text" class="form-control" name="hq" required="required">
+	        	</div>        	
+	    	</div>
+
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Email</label>
+				<div class="col-8">
+	            	<input type="email" class="form-control" name="email" required="required">
+	            	<p>Este correo no se mostrará públicamente. Es nuestra forma de contacto.</p>
+	        	</div>        	
+	    	</div>
+
+	    	<div class="form-group row">
+	    		<label class="col-form-label col-4">Logo</label>
+	    		<div class="col-8">
+	    			<input type="file" class="form-control-file" name="file">
+	    			<p>(pdf / png / jpg / jpeg / gif)</p>
+	    		</div>
+	  		</div>
+
+	    	<div class="form-group row">
+				<label class="col-form-label col-4">Descripción</label>
+				<div class="col-8">
+					<textarea type="text" class="form-control" rows="8" name="companyDescription" required="required"></textarea>
+	        	</div>        	
+	    	</div>
+
+	    	<div class="form-group row">
+				<div class="col-8 offset-4">
+					<h5>TOTAL 0€</h5>
+					<p>* La oferta se publicará durante un periodo de 30 días. Pasado este periodo el anuncio se eliminará automáticamente de nuestra base de datos junto con todos los datos relacionados.</p>
+					<button type="submit" class="btn btn-dark btn-lg">Publicar</button>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 {% endblock %}

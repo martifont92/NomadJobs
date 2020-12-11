@@ -74,7 +74,7 @@ def create_app():
                 )
             db.session.add(new_job)
             db.session.commit()
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.thanks'))
     # end Job
 
     # STRIPE

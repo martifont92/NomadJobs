@@ -22,13 +22,3 @@ class Job(db.Model):
     hq = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     companyDescription = db.Column(db.Text(), nullable=False)
-
-    @classmethod
-    def delete_expired(id):
-        expiration_days = 1
-        limit = datetime.datetime.now() - datetime.timedelta(days=expiration_days)
-        id.query.filter(id.created < limit).delete()
-        db.session.commit()
-
-def delete_expired_jobs():
-    Job.delete_expired()
